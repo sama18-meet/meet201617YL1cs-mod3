@@ -25,5 +25,10 @@ class Student:
         epoch_to_birthday = time.mktime((int(self.birthday_year),int(self.birthday_month),int(self.birthday_day),0,0,0,0,0,0))
         age_in_seconds = time.time()- epoch_to_birthday
         age_in_years = age_in_seconds/(3600*24*365.25)
-        #print(age_in_years)
-        return age_in_years
+##        #print(age_in_years)
+##        return age_in_years
+        next_birthday_year = int(self.birthday_year) + int(age_in_years) +1
+        seconds_till_birthday = time.mktime((next_birthday_year, int(self.birthday_month), int(self.birthday_day),0,0,0,0,0,0)) - time.time()
+        days_till_birthday = seconds_till_birthday/(60*60*24)
+        print(days_till_birthday)
+        return days_till_birthday
